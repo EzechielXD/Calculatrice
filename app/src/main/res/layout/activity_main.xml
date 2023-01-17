@@ -30,6 +30,30 @@
             android:textSize="50sp"
             android:textColor="@color/green"
             tools:text="12"/>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*">
+
+        <TableRow>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="90dp"
+                style="@style/Button_Style"
+                android:text="CE" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="90dp"
+                style="@style/Button_Style"
+                android:src="@drawable/backspace"
+                android:scaleType="center"
+                android:text="DEL" />
+
+        </TableRow>
+        </TableLayout>
     </LinearLayout>
 
 
