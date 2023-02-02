@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
     var oldNumber = ""
     var op = "+"
 
-    lateinit var text: String
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,40 +37,11 @@ class MainActivity : AppCompatActivity() {
         editText.isFocusable = false
         editText.isClickable =false
         editText.isLongClickable =false
-        var negatif = 0
-        var buttonclick = editText.text.toString()
-        buPlusMoins.setOnClickListener {
-            negatif
-            if(++negatif%2 == 0 && editText.text.toString().contains("-")){
-               var newvaleur = editText.text.toString().replace("-", "khjrfy")
-                editText.setText(newvaleur)
-            }else{
-                buttonclick = "-$buttonclick"
-                editText.setText(buttonclick)
-            }
-
-
-
-
-        }
-
 
 
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        var text: String
-        text = editText.getText().toString()
-        outState.putString("key", text)
-    }
 
-    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
-        super.onRestoreInstanceState(savedInstanceState)
-        var newText: String
-       newText = savedInstanceState.getString("key").toString()
-        editText.setText(newText)
-    }
 
 
     fun numberEvent(view: View){
@@ -92,7 +63,7 @@ class MainActivity : AppCompatActivity() {
             bu7.id -> {buttonClick += "7"}
             bu8.id -> {buttonClick += "8"}
             bu9.id -> {buttonClick += "9"}
-           // buvirgule.id -> {buttonClick += "."}
+           buPlusMoins.id -> {buttonClick = "-$buttonClick"}
 
 
         }
