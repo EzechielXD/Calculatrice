@@ -37,9 +37,6 @@ class MainActivity : AppCompatActivity() {
         editText.isFocusable = false
         editText.isClickable = false
         editText.isLongClickable = false
-
-
-
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
