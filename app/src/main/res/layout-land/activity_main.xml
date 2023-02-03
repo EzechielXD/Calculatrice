@@ -252,7 +252,7 @@
         <Button
             android:id="@+id/bu0"
             android:layout_weight="1"
-            android:layout_width="98pt"
+            android:layout_width="110pt"
             android:layout_height="30pt"
             android:text="0"
             android:background="@drawable/click_landscape"
