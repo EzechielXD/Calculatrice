@@ -239,21 +239,10 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/buVirgule"
-            android:layout_width="30pt"
-            android:layout_height="30pt"
-            android:layout_marginRight="2pt"
-            android:layout_weight="1"
-            android:background="@drawable/click_effect"
-            android:onClick="numberEvent"
-            android:text="."
-            android:textColor="@color/white"
-            android:textSize="25dp"></Button>
 
         <Button
             android:id="@+id/bu0"
-            android:layout_width="30pt"
+            android:layout_width="50pt"
             android:layout_height="30pt"
             android:layout_marginRight="2pt"
             android:layout_weight="1"
@@ -266,7 +255,7 @@
 
         <Button
             android:id="@+id/buPlusMoins"
-            android:layout_width="30pt"
+            android:layout_width="45pt"
             android:layout_height="30pt"
             android:layout_marginRight="2pt"
             android:layout_weight="1"

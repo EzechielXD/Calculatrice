@@ -77,13 +77,6 @@ class MainActivity : AppCompatActivity() {
             bu7.id -> {buttonClick += "7"}
             bu8.id -> {buttonClick += "8"}
             bu9.id -> {buttonClick += "9"}
-            buVirgule.id -> {
-                if(virgule == false)
-            {
-                buttonClick = buttonClick+"."
-            }
-                virgule = false
-            }
             buPlusMoins.id -> {
                 if(moins == false)
             {
