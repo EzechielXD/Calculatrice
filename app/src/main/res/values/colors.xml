@@ -9,6 +9,7 @@
     <color name="gray">#BFBDBD</color>
     <color name="window_background">#111111</color>
     <color name="io_background">#222222</color>
+    <color name="click">#8B3A3A3A</color>
     <color name="green">#4ea043</color>
     <color name="red">#d14f4f </color>
     <color name="orange">#FF9800</color>
