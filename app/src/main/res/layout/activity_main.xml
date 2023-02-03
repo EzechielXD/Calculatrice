@@ -23,7 +23,7 @@
         android:inputType="textPersonName"
         android:maxLength="9"
         android:onClick="copyActionEvent"
-        android:text="0"
+        android:text=""
         android:textColor="@color/white"
         android:textSize="35pt" />
 
