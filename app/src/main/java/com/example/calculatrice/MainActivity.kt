@@ -29,18 +29,16 @@ class MainActivity : AppCompatActivity() {
         editText.isLongClickable = false
 
 
-        editText.setOnClickListener{
-            val result = editText.text.toString()
-            val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-            val clip = ClipData.newPlainText("Resultat", editText.text.toString())
-            if (result.isNotEmpty()){
-                clipboard.setPrimaryClip(clip)
-                Toast.makeText(this, "Résultat copié dans le papier presse", Toast.LENGTH_SHORT).show()
-            }else{
-                clipboard.setPrimaryClip(clip)
-                Toast.makeText(this, "Aucun resultatà copier", Toast.LENGTH_SHORT).show()
-            }
-        }
+        editText.setOnLongClickListener(View.OnLongClickListener{
+            val clipboard = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
+
+            val clip = ClipData.newPlainText("Résultat copié dans le papier presse", editText.getText())
+            clipboard.setPrimaryClip(clip)
+            Toast.makeText(applicationContext, "Résultat copié dans le papier presse", Toast.LENGTH_SHORT)
+
+                .show()
+            true
+        })
 
     }
 
@@ -77,14 +75,6 @@ class MainActivity : AppCompatActivity() {
             bu7.id -> {buttonClick += "7"}
             bu8.id -> {buttonClick += "8"}
             bu9.id -> {buttonClick += "9"}
-            buPlusMoins.id -> {
-                if(moins == false)
-                {
-                    buttonClick = "-"+buttonClick
-                }
-                moins = false
-
-            }
 
         }
         editText.setText(buttonClick)
@@ -130,7 +120,14 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             "÷" -> {result = oldNumber.toDouble() / newNumber.toDouble()
-                editText.setText(result.toString())}
+                var resultat = result
+                if(resultat == resultat.toInt().toDouble()){
+                    editText.setText(resultat.toInt().toString())
+                }else{
+                    editText.setText(result.toString())
+                }
+
+                }
             "-" -> {
                 if((oldNumber.isNotEmpty() && oldNumber.isDigitsOnly()) && (newNumber.isNotEmpty() && newNumber.isDigitsOnly())){
                     result_int = (oldNumber.toDouble() - newNumber.toDouble()).toInt()
@@ -166,7 +163,6 @@ class MainActivity : AppCompatActivity() {
             editText.setText(newText);
         }
     }
-
 
 
 }
