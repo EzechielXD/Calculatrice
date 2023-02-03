@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/window_background"
+    android:orientation="vertical"
     tools:context=".MainActivity"
-    >
+    tools:ignore="MissingDefaultResource">
     <!--android:layout_margin="2pt" /"fond blanc autour" -->
 
 
@@ -22,6 +22,7 @@
         android:gravity="right|center"
         android:inputType="textPersonName"
         android:maxLength="9"
+        android:onClick="copyActionEvent"
         android:text="0"
         android:textColor="@color/white"
         android:textSize="35pt" />
@@ -101,142 +102,134 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="1pt"
-            >
+            android:layout_marginBottom="1pt">
 
             <Button
                 android:id="@+id/bu4"
-                android:layout_weight="1"
                 android:layout_width="30pt"
                 android:layout_height="30pt"
-                android:text="4"
-                android:background="@drawable/click_effect"
-                android:textColor="@color/white"
-                android:textSize="25dp"
                 android:layout_marginRight="2pt"
+                android:layout_weight="1"
+                android:background="@drawable/click_effect"
                 android:onClick="numberEvent"
-                ></Button>
+                android:text="4"
+                android:textColor="@color/white"
+                android:textSize="25dp"></Button>
 
             <Button
                 android:id="@+id/bu5"
-                android:layout_weight="1"
                 android:layout_width="30pt"
                 android:layout_height="30pt"
+                android:layout_marginRight="2pt"
+                android:layout_weight="1"
+                android:background="@drawable/click_effect"
+                android:onClick="numberEvent"
                 android:text="5"
                 android:textColor="@color/white"
-                android:background="@drawable/click_effect"
-                android:textSize="25dp"
-                android:layout_marginRight="2pt"
-                android:onClick="numberEvent"
-                ></Button>
+                android:textSize="25dp"></Button>
+
             <Button
                 android:id="@+id/bu6"
-                android:layout_weight="1"
                 android:layout_width="30pt"
                 android:layout_height="30pt"
-                android:text="6"
-                android:background="@drawable/click_effect"
-                android:textColor="@color/white"
-                android:textSize="25dp"
                 android:layout_marginRight="2pt"
+                android:layout_weight="1"
+                android:background="@drawable/click_effect"
                 android:onClick="numberEvent"
-                ></Button>
+                android:text="6"
+                android:textColor="@color/white"
+                android:textSize="25dp"></Button>
+
             <Button
                 android:id="@+id/buMultiplication"
-                android:layout_weight="1"
                 android:layout_width="30pt"
                 android:layout_height="30pt"
-                android:text="×"
-                android:background="@drawable/click_effect_operation"
-                android:textColor="@color/white"
-                android:textSize="25dp"
                 android:layout_marginRight="2pt"
+                android:layout_weight="1"
+                android:background="@drawable/click_effect_operation"
                 android:onClick="operatorEvent"
-                ></Button>
+                android:text="×"
+                android:textColor="@color/white"
+                android:textSize="25dp"></Button>
+
             <Button
                 android:id="@+id/buDivision"
-                android:layout_weight="1"
                 android:layout_width="30pt"
                 android:layout_height="30pt"
-                android:text="÷"
-                android:background="@drawable/click_effect_operation"
-                android:textColor="@color/white"
-                android:textSize="25dp"
                 android:layout_marginRight="2pt"
+                android:layout_weight="1"
+                android:background="@drawable/click_effect_operation"
                 android:onClick="operatorEvent"
-                ></Button>
+                android:text="÷"
+                android:textColor="@color/white"
+                android:textSize="25dp"></Button>
         </TableRow>
+
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="1pt"
-            >
+            android:layout_marginBottom="1pt">
 
             <Button
                 android:id="@+id/bu1"
-                android:layout_weight="1"
                 android:layout_width="30pt"
                 android:layout_height="30pt"
-                android:text="1"
-                android:background="@drawable/click_effect"
-                android:textColor="@color/white"
-                android:textSize="25dp"
                 android:layout_marginRight="2pt"
+                android:layout_weight="1"
+                android:background="@drawable/click_effect"
                 android:onClick="numberEvent"
-                ></Button>
+                android:text="1"
+                android:textColor="@color/white"
+                android:textSize="25dp"></Button>
 
             <Button
                 android:id="@+id/bu2"
-                android:layout_weight="1"
                 android:layout_width="30pt"
                 android:layout_height="30pt"
-                android:text="2"
-                android:background="@drawable/click_effect"
-                android:textColor="@color/white"
-                android:textSize="25dp"
                 android:layout_marginRight="2pt"
+                android:layout_weight="1"
+                android:background="@drawable/click_effect"
                 android:onClick="numberEvent"
-                ></Button>
+                android:text="2"
+                android:textColor="@color/white"
+                android:textSize="25dp"></Button>
+
             <Button
                 android:id="@+id/bu3"
-                android:layout_weight="1"
                 android:layout_width="30pt"
                 android:layout_height="30pt"
-                android:text="3"
-                android:background="@drawable/click_effect"
-                android:textColor="@color/white"
-                android:textSize="25dp"
                 android:layout_marginRight="2pt"
+                android:layout_weight="1"
+                android:background="@drawable/click_effect"
                 android:onClick="numberEvent"
-                ></Button>
+                android:text="3"
+                android:textColor="@color/white"
+                android:textSize="25dp"></Button>
+
             <Button
                 android:id="@+id/buPlus"
-                android:layout_weight="1"
                 android:layout_width="30pt"
                 android:layout_height="30pt"
-                android:text="+"
-                android:background="@drawable/click_effect_operation"
-                android:textColor="@color/white"
-                android:textSize="25dp"
                 android:layout_marginRight="2pt"
+                android:layout_weight="1"
+                android:background="@drawable/click_effect_operation"
                 android:onClick="operatorEvent"
-                ></Button>
+                android:text="+"
+                android:textColor="@color/white"
+                android:textSize="25dp"></Button>
+
             <Button
                 android:id="@+id/buMoins"
-                android:layout_weight="1"
                 android:layout_width="30pt"
                 android:layout_height="30pt"
-                android:text="-"
-                android:background="@drawable/click_effect_operation"
-                android:textColor="@color/white"
-                android:textSize="25dp"
                 android:layout_marginRight="2pt"
+                android:layout_weight="1"
+                android:background="@drawable/click_effect_operation"
                 android:onClick="operatorEvent"
-                ></Button>
+                android:text="-"
+                android:textColor="@color/white"
+                android:textSize="25dp"></Button>
         </TableRow>
-
-
-
 
 
     </TableLayout>
@@ -246,71 +239,66 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/buCopy"
+        <Button
+            android:id="@+id/buVirgule"
             android:layout_width="30pt"
             android:layout_height="30pt"
             android:layout_marginRight="2pt"
             android:layout_weight="1"
-            android:background="@drawable/click_effect_copy"
-            android:scaleType="centerInside"
-            android:src="@drawable/cop"
+            android:background="@drawable/click_effect"
+            android:onClick="numberEvent"
+            android:text="."
             android:textColor="@color/white"
-            android:textSize="0dp"
-            android:onClick="copyActionEvent"
-            ></ImageButton>
+            android:textSize="25dp"></Button>
 
         <Button
             android:id="@+id/bu0"
-            android:layout_weight="1"
             android:layout_width="30pt"
             android:layout_height="30pt"
-            android:text="0"
-            android:background="@drawable/click_effect"
-            android:textColor="@color/white"
-            android:textSize="25dp"
             android:layout_marginRight="2pt"
+            android:layout_weight="1"
+            android:background="@drawable/click_effect"
             android:onClick="numberEvent"
-            ></Button>
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="25dp"></Button>
 
 
         <Button
             android:id="@+id/buPlusMoins"
-            android:layout_weight="1"
             android:layout_width="30pt"
             android:layout_height="30pt"
-            android:text="+/-"
-            android:background="@drawable/click_effect"
-            android:textColor="@color/white"
-            android:textSize="25dp"
             android:layout_marginRight="2pt"
+            android:layout_weight="1"
+            android:background="@drawable/click_effect"
             android:onClick="numberEvent"
-            ></Button>
+            android:text="+/-"
+            android:textColor="@color/white"
+            android:textSize="25dp"></Button>
+
         <Button
             android:id="@+id/buModulo"
-            android:layout_weight="1"
             android:layout_width="30pt"
             android:layout_height="30pt"
-            android:text="%"
-            android:background="@drawable/click_effect_operation"
-            android:textColor="@color/white"
-            android:textSize="25dp"
             android:layout_marginRight="2pt"
+            android:layout_weight="1"
+            android:background="@drawable/click_effect_operation"
             android:onClick="operatorEvent"
-            ></Button>
+            android:text="%"
+            android:textColor="@color/white"
+            android:textSize="25dp"></Button>
+
         <Button
             android:id="@+id/buegal"
-            android:layout_weight="1"
             android:layout_width="30pt"
             android:layout_height="30pt"
-            android:text="="
-            android:background="@drawable/click_effect_equal"
-            android:textColor="@color/white"
-            android:textSize="25dp"
             android:layout_marginRight="2pt"
+            android:layout_weight="1"
+            android:background="@drawable/click_effect_equal"
             android:onClick="equalEvent"
-            ></Button>
-
+            android:text="="
+            android:textColor="@color/white"
+            android:textSize="25dp"></Button>
 
 
     </LinearLayout>

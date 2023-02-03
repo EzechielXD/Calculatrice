@@ -5,28 +5,18 @@ import android.content.ClipboardManager
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.util.Log
 import android.view.View
 import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
-import androidx.annotation.NonNull
-import androidx.core.content.ContextCompat
 import androidx.core.text.isDigitsOnly
 import kotlinx.android.synthetic.main.activity_main.*
-import org.mariuszgromada.math.mxparser.Expression
-import org.mariuszgromada.math.mxparser.mathcollection.MathFunctions.mod
-import org.mozilla.javascript.tools.debugger.Dim.ContextData
-import java.text.DecimalFormat
-import javax.script.ScriptEngine
-import javax.script.ScriptEngineManager
-import javax.script.ScriptException
 
 class MainActivity : AppCompatActivity() {
-    var isNewOp = true
+    var isNewOperation = true
     var oldNumber = ""
     var op = "+"
+    var moins = false
+    var virgule = false
 
 
 
@@ -37,6 +27,21 @@ class MainActivity : AppCompatActivity() {
         editText.isFocusable = false
         editText.isClickable = false
         editText.isLongClickable = false
+
+
+        editText.setOnClickListener{
+                val result = editText.text.toString()
+                val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+                val clip = ClipData.newPlainText("Resultat", editText.text.toString())
+                if (result.isNotEmpty()){
+                    clipboard.setPrimaryClip(clip)
+                    Toast.makeText(this, "Résultat copié dans le papier presse", Toast.LENGTH_SHORT).show()
+                }else{
+                    clipboard.setPrimaryClip(clip)
+                    Toast.makeText(this, "Aucun resultatà copier", Toast.LENGTH_SHORT).show()
+            }
+        }
+
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -54,10 +59,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun numberEvent(view: View){
-        if(isNewOp)
+        if(isNewOperation)
             editText.setText("")
 
-        isNewOp = false
+        isNewOperation = false
         var buttonClick = editText.text.toString()
         var buttonSelect = view as Button
         var negatif = 0
@@ -72,15 +77,28 @@ class MainActivity : AppCompatActivity() {
             bu7.id -> {buttonClick += "7"}
             bu8.id -> {buttonClick += "8"}
             bu9.id -> {buttonClick += "9"}
-           buPlusMoins.id -> {buttonClick = "-$buttonClick"}
+            buVirgule.id -> {
+                if(virgule == false)
+            {
+                buttonClick = buttonClick+"."
+            }
+                virgule = false
+            }
+            buPlusMoins.id -> {
+                if(moins == false)
+            {
+                buttonClick = "-"+buttonClick
+            }
+                moins = false
 
+            }
 
         }
         editText.setText(buttonClick)
     }
 
     fun operatorEvent(view: View){
-        isNewOp = true
+        isNewOperation = true
         oldNumber = editText.text.toString()
         var buttonSelect = view as Button
         when(buttonSelect.id){
@@ -103,12 +121,12 @@ class MainActivity : AppCompatActivity() {
         when(op){
             "×" -> {
                 if((oldNumber.isNotEmpty() && oldNumber.isDigitsOnly()) && (newNumber.isNotEmpty() && newNumber.isDigitsOnly())){
-                result_int = (oldNumber.toDouble() * newNumber.toDouble()).toInt()
-                editText.setText(result_int.toString())
-            }else{
-                result = oldNumber.toDouble() * newNumber.toDouble()
-                editText.setText(result.toString())
-            }}
+                    result_int = (oldNumber.toDouble() * newNumber.toDouble()).toInt()
+                    editText.setText(result_int.toString())
+                }else{
+                    result = oldNumber.toDouble() * newNumber.toDouble()
+                    editText.setText(result.toString())
+                }}
             "+" -> {
                 if((oldNumber.isNotEmpty() && oldNumber.isDigitsOnly()) && (newNumber.isNotEmpty() && newNumber.isDigitsOnly())){
                     result_int = (oldNumber.toDouble() + newNumber.toDouble()).toInt()
@@ -117,7 +135,7 @@ class MainActivity : AppCompatActivity() {
                     result = oldNumber.toDouble() + newNumber.toDouble()
                     editText.setText(result.toString())
                 }
-                    }
+            }
             "÷" -> {result = oldNumber.toDouble() / newNumber.toDouble()
                 editText.setText(result.toString())}
             "-" -> {
@@ -146,7 +164,7 @@ class MainActivity : AppCompatActivity() {
 
     fun resetEvent(view: View){
         editText.setText("0")
-        isNewOp = true
+        isNewOperation = true
     }
 
     fun backspaceEvent(view: View){
@@ -156,19 +174,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun copyActionEvent(view: View){
-        val result = editText.text.toString()
-        val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-        val clip = ClipData.newPlainText("Resultat", editText.text.toString())
-        if (result.isNotEmpty()){
-            clipboard.setPrimaryClip(clip)
-            Toast.makeText(this, "Résultat copié dans le papier presse", Toast.LENGTH_SHORT).show()
-        }else{
-            clipboard.setPrimaryClip(clip)
-            Toast.makeText(this, "Aucun resultatà copier", Toast.LENGTH_SHORT).show()
-        }
-    }
+
 
 }
-
 
