@@ -7,14 +7,14 @@
     android:orientation="vertical"
     android:background="@color/window_background"
     tools:context=".MainActivity"
-    tools:ignore="MissingDefaultResource">
+    >
     <!--android:layout_margin="2pt" /"fond blanc autour" -->
 
 
     <TextView
         android:id="@+id/editText"
         android:layout_width="match_parent"
-        android:layout_height="4dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="1pt"
         android:layout_weight="1"
         android:background="@color/black"
@@ -78,7 +78,7 @@
                 android:layout_height="30pt"
                 android:layout_marginRight="2pt"
                 android:layout_weight="1"
-                android:background="@color/io_background"
+                android:background="@color/red"
                 android:onClick="backspaceEvent"
                 android:scaleType="center"
                 android:src="@drawable/backspace"
@@ -147,8 +147,8 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:text="×"
-                android:background="@color/white"
-                android:textColor="@color/black"
+                android:background="@color/orange"
+                android:textColor="@color/white"
                 android:textSize="25dp"
                 android:layout_marginRight="2pt"
                 android:onClick="operatorEvent"
@@ -159,8 +159,8 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:text="÷"
-                android:background="@color/white"
-                android:textColor="@color/black"
+                android:background="@color/orange"
+                android:textColor="@color/white"
                 android:textSize="25dp"
                 android:layout_marginRight="2pt"
                 android:onClick="operatorEvent"
@@ -215,8 +215,8 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:text="+"
-                android:background="@color/white"
-                android:textColor="@color/black"
+                android:background="@color/orange"
+                android:textColor="@color/white"
                 android:textSize="25dp"
                 android:layout_marginRight="2pt"
                 android:onClick="operatorEvent"
@@ -227,8 +227,8 @@
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:text="-"
-                android:background="@color/white"
-                android:textColor="@color/black"
+                android:background="@color/orange"
+                android:textColor="@color/white"
                 android:textSize="25dp"
                 android:layout_marginRight="2pt"
                 android:onClick="operatorEvent"
@@ -246,6 +246,19 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
+        <ImageButton
+            android:id="@+id/buCopy"
+            android:layout_width="30pt"
+            android:layout_height="30pt"
+            android:layout_marginRight="2pt"
+            android:layout_weight="1"
+            android:background="@color/gray"
+            android:scaleType="centerInside"
+            android:src="@drawable/cop"
+            android:textColor="@color/white"
+            android:textSize="0dp"
+            android:onClick="copyActionEvent"
+            ></ImageButton>
 
         <Button
             android:id="@+id/bu0"
@@ -260,19 +273,7 @@
             android:onClick="numberEvent"
             ></Button>
 
-        <Button
-            android:id="@+id/buvirgule"
-            android:layout_weight="1"
-            android:layout_width="30pt"
-            android:layout_height="30pt"
-            android:src="@drawable/backspace"
-            android:textColor="@color/white"
-            android:text="."
-            android:background="@color/io_background"
-            android:textSize="25dp"
-            android:layout_marginRight="2pt"
-            android:onClick="copyActionEvent"
-            ></Button>
+
         <Button
             android:id="@+id/buPlusMoins"
             android:layout_weight="1"
@@ -291,8 +292,8 @@
             android:layout_width="30pt"
             android:layout_height="30pt"
             android:text="%"
-            android:background="@color/white"
-            android:textColor="@color/black"
+            android:background="@color/orange"
+            android:textColor="@color/white"
             android:textSize="25dp"
             android:layout_marginRight="2pt"
             android:onClick="operatorEvent"

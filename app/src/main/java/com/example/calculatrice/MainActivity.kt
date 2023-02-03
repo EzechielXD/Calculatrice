@@ -35,14 +35,26 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         editText.setTextIsSelectable(true)
         editText.isFocusable = false
-        editText.isClickable =false
-        editText.isLongClickable =false
+        editText.isClickable = false
+        editText.isLongClickable = false
+
 
 
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        var text: String
+        text = editText.getText().toString()
+        outState.putString("key", text)
+    }
 
-
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        var newText: String
+        newText = savedInstanceState.getString("key").toString()
+        editText.setText(newText)
+    }
 
     fun numberEvent(view: View){
         if(isNewOp)
@@ -85,9 +97,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun equalEvent(view: View){
+
         var newNumber = editText.text.toString()
         var result = 0.0;
         var result_int : Int;
+
+
         when(op){
             "×" -> {
                 if((oldNumber.isNotEmpty() && oldNumber.isDigitsOnly()) && (newNumber.isNotEmpty() && newNumber.isDigitsOnly())){
